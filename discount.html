@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <title>Looping Computation</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 <body>
 <h2>Asritha Baddam computes discounts</h2>
 <form>
@@ -10,7 +14,7 @@
     <label for="form1_nick">Enter the discount percentage.  </label>
     <input type ="text" id="form1_nick" name="form1_nick" value=10 autofocus> <br>
 
-    <input type="button" onclick="discount()" value="Apply discount">
+    <input type="button" class="text-success" onclick="discount()" value="Apply discount">
 </form>
 <p id="result">This text will be replaced</p>
 <form>
