@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<title>Looping Computation</title>
+<body>
+<h2>Asritha Baddam computes discounts</h2>
+<form>
+    <label for="form1_age">Enter base amount </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=20> <br>
+
+    <label for="form1_nick">Enter the discount percentage.  </label>
+    <input type ="text" id="form1_nick" name="form1_nick" value=10 autofocus> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+<p id="result">This text will be replaced</p>
+<form>
+    <input onclick="chooseOp()" type="radio" id="multiply" name="color" value="times"   
+      checked>
+    <label for="multiply">*</label></br>
+  
+    <input  onclick="chooseOp()" type="radio" id="Division" name="color" 
+       value="divide">
+    <label for="Division">/</label></br>
+  
+    <input  onclick="chooseOp()" type="radio" id="power" name="color"   
+       value="exponent">
+    <label for="power">**</label></br>
+
+    <input type="button" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+  <p id="output">This text will be replaced</p>
+<script> 
+    function chooseOp() {
+        base = document.getElementById("form1_age").value
+        discount = document.getElementById("form1_nick").value
+        M = document.getElementById("multiply").checked
+        D = document.getElementById("Division").checked
+        P = document.getElementById("power").checked       
+        out = document.getElementById("output")
+        if(M==true){
+            out.innerHTML =base*discount
+        }
+        if(D==true){
+            out.innerHTML=base/discount
+        }
+        if(P==true){
+            out.innerHTML=base**discount
+        }        
+    }
+    function discount() {
+    console.log("Getting input")
+    base = document.getElementById("form1_age").value
+    discount = document.getElementById("form1_nick").value
+    let result1="Discounted amounts for base "+base+" are ";
+    for(i=1; i<6 ; i++){
+        result1=result1+((i*base)-(i*base*discount)/100)+" ";
+    }
+    out = document.getElementById("result")
+    out.innerHTML = result1
+}
+ </script>
+</body>
+</html>
